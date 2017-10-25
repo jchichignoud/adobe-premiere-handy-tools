@@ -9,7 +9,7 @@
 var sequenceLocation = app.project.rootItem.children[0]
 var sequenceName = null
 
-duplicateActive();
+//duplicateActive();
 
 
 
