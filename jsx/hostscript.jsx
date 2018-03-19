@@ -1,16 +1,13 @@
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
 /*global $, Folder*/
 
+///////////////////////////////////
+//////DUPLICATE AND INCREMENT//////
+///////////////////////////////////
 
-//function sayHello(){
-//    alert("hello from ExtendScript");
-//}
 
-var sequenceLocation = app.project.rootItem.children[0]
-var sequenceName = null
-
-//duplicateActive();
-
+var sequenceLocation = app.project.rootItem.children[0];
+var sequenceName = null;
 
 
 function getSequenceID(){
@@ -76,3 +73,12 @@ function padNum(num, size) {
     var s = "000000000" + num;
     return s.substr(s.length-size);
 }
+
+///////////////////////////////////
+//////////PROJECT BROWSER//////////
+///////////////////////////////////
+
+function getProjectsList() {
+    return app.projects[0].name;
+}
+

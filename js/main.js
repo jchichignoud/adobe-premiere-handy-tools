@@ -14,9 +14,13 @@
         $("#btn_duplicate").click(function () {
             csInterface.evalScript('duplicateActive()');
         });
+
+        alert(csInterface.evalScript('getProjectsList()'));
     }
         
     init();
 
+
+
 }());
-    
+
