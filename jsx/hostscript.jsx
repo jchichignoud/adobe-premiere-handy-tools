@@ -74,11 +74,3 @@ function padNum(num, size) {
     return s.substr(s.length-size);
 }
 
-///////////////////////////////////
-//////////PROJECT BROWSER//////////
-///////////////////////////////////
-
-function getProjectsList() {
-    return app.projects[0].name;
-}
-
