@@ -1,51 +1,50 @@
-/*Your styles*/
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
 
  body {
-    margin: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(177,177,177);
+    font-size: 10px;
 }
-
 
 #content {
-    margin-right:auto;
-    margin-left:auto;
-    vertical-align:middle;
-    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
 }
 
-
-#btn_test{
-    width: 100%;
+.btn {
+    margin: 0 auto;
+    border:1px solid rgb(177,177,177);
+    padding: 0.5em;
 }
 
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: #000;
+}
 
+::-webkit-scrollbar-thumb {
+    background: #393812;
+    border-radius: 1ex;
+    -webkit-border-radius: 1ex;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
 
+::-webkit-scrollbar-corner {
+    background: #000;
+}
 
-/*
-Those classes will be edited at runtime with values specified
-by the settings of the CC application
-*/
-.hostFontColor{}
-.hostFontFamily{}
-.hostFontSize{}
-
-/*font family, color and size*/
-.hostFont{}
-/*background color*/
-.hostBgd{}
-/*lighter background color*/
-.hostBgdLight{}
-/*darker background color*/
-.hostBgdDark{}
-/*background color and font*/
-.hostElt{}
-
-
-.hostButton{
-    border:1px solid;
-    border-radius:2px;
-    height:20px;
-    vertical-align:bottom;
-    font-family:inherit;
-    color:inherit;
-    font-size:inherit;
+.btn:hover {
+    border:1px solid white;
+    color: white;
 }
