@@ -21,19 +21,25 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .btn {
-    margin: 0 auto;
+    margin: 5px auto;
     border:1px solid rgb(177,177,177);
     padding: 0.5em;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    border:1px solid white;
+    color: white;
 }
 
 ::-webkit-scrollbar {
-    height: 12px;
-    width: 12px;
-    background: #000;
+    height: 10px;
+    width: 10px;
+    background: rgb(29, 29, 29);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #393812;
+    background: rgb(49, 49, 49);
     border-radius: 1ex;
     -webkit-border-radius: 1ex;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
@@ -41,10 +47,5 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 ::-webkit-scrollbar-corner {
-    background: #000;
-}
-
-.btn:hover {
-    border:1px solid white;
-    color: white;
+    background: rgb(29, 29, 29);
 }
