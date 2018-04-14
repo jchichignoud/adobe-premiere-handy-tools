@@ -12,7 +12,12 @@
     $("#btn_duplicate").click(function() {
       csInterface.evalScript("duplicateActive()");
     });
+
+    $("#btn_fill").click(function() {
+      csInterface.evalScript("fillFrame()");
+    });
   }
 
   init();
 })();
+

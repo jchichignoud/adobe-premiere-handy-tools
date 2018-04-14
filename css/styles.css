@@ -1,4 +1,4 @@
-button, input[type="submit"], input[type="reset"] {
+a, button, input[type="submit"], input[type="reset"] {
     background: none;
     color: inherit;
     border: none;
