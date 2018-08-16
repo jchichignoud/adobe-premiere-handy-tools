@@ -106,7 +106,7 @@ function fillFrame() {
 }
 
 
-// takes in the active sequence or a sequence clip, returns object with width height and ratio of the project item
+// takes in the active sequence or a sequence clip, returns object with width, height and ratio properties of the item
 function getSize(item) {
 	var xmp = new XMPMeta(item.projectItem.getProjectMetadata())
 					var sizeInfo = xmp.getProperty(kPProPrivateProjectMetadataURI, 'Column.Intrinsic.VideoInfo').toString().split(' ');
@@ -115,16 +115,53 @@ function getSize(item) {
 					return({'width': width, 'height': height, 'ratio': (width/height)})
 }
 
-// app.project.activeSequence.videoTracks (for each)
 
-// .clips (for each) .components[1].properties[1].getValue() ]] // components[1] is Motion, properties[1] is sizing
+///////////////////////////////////
+////////////SNAPSHOT///////////////
+///////////////////////////////////
 
 
-//  var pxmp = new XMPMeta(clip.getProjectMetadata())  
-// 				if (pxmp.doesPropertyExist(kPProPrivateProjectMetadataURI, 'Column.Intrinsic.MediaTimebase') == true) {  
-// 					frameRate = pxmp.getProperty(kPProPrivateProjectMetadataURI, 'Column.Intrinsic.MediaTimebase')  
-// 					frameRate = parseFloat(frameRate)
-// 					alert(frameRate);  
+function snapshotSequence(date, description){
+	sequenceName = app.project.activeSequence.projectItem.name;
+	findInProjectById_v2(getSequenceID());
+    app.project.activeSequence.clone();
+	app.project.activeSequence.projectItem.name = date + "_" + sequenceName;
+	addNotes(app.project.activeSequence, description);
+    app.project.activeSequence.projectItem.moveBin(findOrCreateSnapshotsBin(sequenceLocation));
+}
 
-// <premierePrivateProjectMetaData:Column.Intrinsic.VideoInfo>1920 x 1080 (1.0)</premierePrivateProjectMetaData:Column.Intrinsic.VideoInfo>
-         
+
+function findOrCreateSnapshotsBin(sequenceBin){
+	for (var i = 0; i < sequenceBin.children.numItems; i++){
+		if (sequenceBin.children[i].name === "_SNAPSHOTS"){
+			return sequenceBin.children[i];
+		}
+	}
+	return sequenceBin.createBin("_SNAPSHOTS");
+}
+
+function findInProjectById_v2(id){
+    sequenceLocation = app.project.rootItem;
+    var checkEachProjectItem = function(element){
+        for (var i = 0; i < element.children.numItems; i++){
+            if (element.children[i].type === 2){
+                checkEachProjectItem(element.children[i]);
+            } else {
+                if (element.children[i].nodeId === id){
+                	sequenceLocation = element;
+                	element.children[i].moveBin(sequenceLocation)
+                	return
+                }
+            }
+        }
+    }
+    return checkEachProjectItem(app.project.rootItem);
+}
+
+
+function addNotes(activeSeq, note) {
+	var xmp = new XMPMeta(activeSeq.projectItem.getProjectMetadata());
+	xmp.setProperty(kPProPrivateProjectMetadataURI, 'Column.PropertyText.Description', note);
+	var xmpAsString = xmp.serialize()
+	activeSeq.projectItem.setProjectMetadata(xmpAsString, ['Column.PropertyText.Description']);
+}
