@@ -1,0 +1,34 @@
+[
+    {
+        "label": "Sequence New Version",
+        "id": "duplicate",
+        "app": "PPRO",
+        "version": [12.0, 13],
+        "blurb": "Duplicate the sequence and increment the name. If the sequence doesn't end with a number, _v2 will be appended. The original sequence will be closed and moved to a subfolder '_OLD'",
+        "dev": false,
+        "settings": {
+            "binName": "_OLD"
+        }
+    },
+    {
+        "label": "Sequence Snapshot",
+        "id": "snapshot",
+        "app": "PPRO",
+        "version": [12.0, 13],
+        "blurb": "Save a timestamped copy of the sequence with notes added to a metadata column",
+        "dev": false,
+        "settings": {
+            "binName": "_SNAPSHOTS",
+            "showUsername": true,
+            "metadataColumn": "Column.PropertyText.Description"
+        }
+    },
+    {
+        "label": "Fill Frame",
+        "id": "fill",
+        "app": "PPRO",
+        "version": [12.0, 13],
+        "blurb": "Set size of selected clips to fill the frame with minimum crop",
+        "dev": true
+    }
+]

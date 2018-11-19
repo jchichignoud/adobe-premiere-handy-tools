@@ -2,7 +2,7 @@
 
 ## INTRODUCTION/WARNING
 
-> This is a minimalist Premiere extension panel designed to be tucked away in a corner of your workspace and give you quick access to a few useful shortcuts. My plan is to add any new function to it I can come up with, with in mind the limitations of the Adobe API, and of my own coding skills.
+> This is a minimalist Premiere extension panel designed to be tucked away in a corner of your workspace and give you quick access to a few useful shortcuts. My plan is to add any new function to it I can come up with, within the limitations of the Adobe API, and of my own coding skills.
 > 
 > Please note I am not a professional developer and can't guarantee perfect experience with this panel. I have created it to help my own workflow and am sharing it (for free) because it might help people as much as it's been helping me. It is functional and reliable aside from the known issues listed below, but I can't take responsibility if it is used wrong. Always back up your project before having a play :) 
 
@@ -25,13 +25,15 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 ### INSTRUCTIONS
 - Load sequence in Timeline (needs to be active, it won't work with a selected sequence in the Project Browser because of API limitations)
 - Press "Duplicate Sequence +1" button
-- Name of the sequence needs to end with a number, which will be automatically incremented
+- Name of the sequence should end with a number, which will be automatically incremented, otherwise " v2" will be added to the end
 - Original sequence will be placed in a sub-bin called "_OLD", which will be created if it doesn't exist
 - New sequence becomes active
+- [NEW] Old sequence is closed
 
 ### RECENT FIXES
 - Handling "No active sequence" scenario with an alert
-- Automatically adding "_v2" to the end of sequence names that can't be incremented (if they don't end with a digit)
+- Automatically adding "_v2" to the end of sequence names that can't be incremented (when they don't end with a digit)
+- Old sequence is closed
 
 ### KNOWN ISSUES
 - No known issues
@@ -44,13 +46,14 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 
 ### INSTRUCTIONS
 - Load sequence in Timeline (needs to be active, it won't work with a selected sequence in the Project Browser because of API limitations)
-- Press "SEQUENCE SNAPSHOT" button
-- Add a comment about the snapshot(version to client, music option #1, etc..)
-- New sequence will be created, with the date and time of creation as prefix (in YYYYMMDD_HHmm format) and place in a "_SNAPSHOTS" SUBFOLDER
+- Press "Sequence Snapshot" button
+- Add a comment about the snapshot (version to client, music option #1, etc..)
+- New sequence will be created, with the date and time of creation as prefix (in YYYYMMDD_HHmm format) and placed in a "_SNAPSHOTS" Subfolder (which will be created if it doesn't exist)
 - Comment will be added to the Description metadata field
 
 ### KNOWN ISSUES
 - Once created, the "Snapshot Sequence" becomes open and active, ideally the focus should stay on the original sequence and the Snapshot should be left untouched for reference
+- Some special characters, such as apostrophes, will break the code when input in the notes dialog box. It'll trigger an error message and the duplication will fail 
 
 --- 
 
@@ -65,7 +68,7 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 - Press button to have each shot fill the frame perfectly (will overwrite existing scaling)
 
 ### KNOWN ISSUES
-- No way to "Undo". Save project before using the function and quit without saving if you need to revert
+- No way to "Undo". Save project before using the function and quit without saving if you need to revert, or duplicate the sequence beforehand
 - No effect if the scale is already keyframed
 - Doesn't account for discrepancies in pixel ratio between the timeline and the clips
 - UI doesn't refresh immediately. Scrub the timeline to see the Scaling update
@@ -73,4 +76,9 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 --- 
 
 ## PLANNED FEATURES
+- Add support for selected sequences in Project window to be duplicated rather than Active Sequence
 - Function to easily import feedback from an email as sequence markers
+- Proxies-Only mode, automatically making hi-res media offline when proxies are attached, to force exports to use Proxies (faster renders)
+- export CSV of selected files in the Media Browser
+- User settings to hide buttons and turn features on/off
+- Media alert when adding items that are not stored on the same drive as the project
