@@ -48,7 +48,6 @@ $._PPRO_={
 	/////////////////////////
 
 	duplicateActive : function() {
-		alert("that's new")
 		var oldSeq = app.project.activeSequence;
 		var newSeq = undefined;
 		if (oldSeq) {
