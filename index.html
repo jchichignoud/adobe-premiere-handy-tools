@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<!--
-  /*************************************************************************
-  * ADOBE CONFIDENTIAL
-  * ___________________
-  *
-  * Copyright 2014 Adobe
-  * All Rights Reserved.
-  *
-  * NOTICE: Adobe permits you to use, modify, and distribute this file in
-  * accordance with the terms of the Adobe license agreement accompanying
-  * it. If you have received this file from a source other than Adobe,
-  * then your use, modification, or distribution of it requires the prior
-  * written permission of Adobe.
-  **************************************************************************/
--->
+<!doctype html>
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <script src="./lib/CSInterface.js"></script>
-  <script src="./lib/jquery-1.9.1.js"></script>
-  <script src="./lib/Vulcan.js"></script>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <script src="./init.js"></script>
-  <script src="./js/clickHandlers.js"></script>
+    <meta charset="utf-8">
+
+    <link id="hostStyle" rel="stylesheet" href="css/styles.css" />
+
+    <title></title>
 </head>
 
-<body onLoad="onLoaded()">
-  <div id="content">
-    <!-- Buttons will be dynamically loaded by the init Javascript -->
-  </div>
+<body>
+    <div id="content">
+         <button id="btn_duplicate" class="btn">Sequence Duplicate +1</button>
+         <button id="btn_snapshot" class="btn">Sequence Snapshot</button>
+         <button id="btn_fill" class="btn">Fill Frame</button>
+    </div>
+
+    <script src="js/libs/CSInterface.js"></script>
+    <script src="js/libs/jquery-2.0.2.min.js"></script>
+
+    <script src="js/themeManager.js"></script>
+    <script src="js/main.js"></script>
+
+
 </body>
 
 </html>
