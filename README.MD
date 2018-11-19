@@ -18,7 +18,7 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 
 ---
 
-## DUPLICATE SEQUENCE +1
+## SEQUENCE NEW VERSION
 
 > One-Click option for something all editors do at least 10 times a day: duplicate a sequence and increment the version number (from "Edit 01" to "Edit 02" for example)
 
@@ -28,12 +28,12 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 - Name of the sequence should end with a number, which will be automatically incremented, otherwise " v2" will be added to the end
 - Original sequence will be placed in a sub-bin called "_OLD", which will be created if it doesn't exist
 - New sequence becomes active
-- [NEW] Old sequence is closed
+- [NEW] Old sequence is closed (Premiere 2019 only)
 
 ### RECENT FIXES
 - Handling "No active sequence" scenario with an alert
 - Automatically adding "_v2" to the end of sequence names that can't be incremented (when they don't end with a digit)
-- Old sequence is closed
+- Old sequence is closed (Premiere 2019 only)
 
 ### KNOWN ISSUES
 - No known issues
@@ -49,10 +49,11 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 - Press "Sequence Snapshot" button
 - Add a comment about the snapshot (version to client, music option #1, etc..)
 - New sequence will be created, with the date and time of creation as prefix (in YYYYMMDD_HHmm format) and placed in a "_SNAPSHOTS" Subfolder (which will be created if it doesn't exist)
-- Comment will be added to the Description metadata field
+- Comment will be added to the Description metadata field, [NEW] preceded by username
+- [NEW] Snapshot sequence is closed (Premiere 2019 only)
 
 ### KNOWN ISSUES
-- Once created, the "Snapshot Sequence" becomes open and active, ideally the focus should stay on the original sequence and the Snapshot should be left untouched for reference
+- On Premiere 2018, the Snapshot sequence becomes the focus. It should ideally be closed/locked, and not touched by the user.
 - Some special characters, such as apostrophes, will break the code when input in the notes dialog box. It'll trigger an error message and the duplication will fail 
 
 --- 
@@ -79,6 +80,6 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 - Add support for selected sequences in Project window to be duplicated rather than Active Sequence
 - Function to easily import feedback from an email as sequence markers
 - Proxies-Only mode, automatically making hi-res media offline when proxies are attached, to force exports to use Proxies (faster renders)
-- export CSV of selected files in the Media Browser
-- User settings to hide buttons and turn features on/off
+- export CSV of selected files in the Project Browser
+- User settings to hide buttons, turn features on/off, or customise some behaviours
 - Media alert when adding items that are not stored on the same drive as the project
