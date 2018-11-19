@@ -187,7 +187,7 @@ function loadButtons(app, version) {
 			if ((app == button.app) && (button.version[0] <= parseFloat(version)) && (parseFloat(version) <= button.version[1])){
 				// enable dev buttons
 				if (!button.dev || isDev){
-					var html = `<button id="btn_${button.id}" class="btn">${button.label}</button>`
+					var html = `<button id="btn_${button.id}" class="btn" title=${button.blurb}>${button.label}</button>`
 					$( "#content" ).append(html);
 				}
 			}

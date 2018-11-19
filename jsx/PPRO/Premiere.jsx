@@ -51,9 +51,7 @@ $._PPRO_={
 		var oldSeq = app.project.activeSequence;
 		var newSeq = undefined;
 		if (oldSeq) {
-			app.setSDKEventMessage("Looking for " + oldSeq.projectItem.nodeId, 'info')
 			var sequenceLocation = $._PPRO_.findContainingBin(oldSeq.projectItem.nodeId);
-			app.setSDKEventMessage("The sequence is in: " + sequenceLocation.treePath, 'info')
 			oldSeq.clone();
 			newSeq = app.project.activeSequence;
 			newSeq.projectItem.name = $._HELPERS_.incrementName(oldSeq.name);
@@ -62,7 +60,7 @@ $._PPRO_={
 			if (parseFloat(app.version) >= 13){
 				oldSeq.close();
 			}
-			app.setSDKEventMessage("Sequence " + oldSeq.name + " has been duplicated and renamed to + " + newSeq.name, 'info')
+			app.setSDKEventMessage(oldSeq.name + " has been duplicated and renamed to: " + newSeq.name, 'info')
 		} else {
 			app.setSDKEventMessage("No active sequence to duplicate", 'error')
 		}
