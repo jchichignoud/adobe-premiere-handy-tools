@@ -11,10 +11,10 @@ function onLoaded() {
 
 	var caps = csInterface.getHostCapabilities();
 
-	loadButtons(appName, appVersion);
-	
 	loadJSX();
-	
+
+	loadButtons(appName, appVersion);
+
 	updateThemeWithAppSkinInfo(csInterface.hostEnvironment.appSkinInfo);
 
 
@@ -25,17 +25,17 @@ function onLoaded() {
 		alert(event.data);
 	});
 
-	csInterface.addEventListener("com.adobe.csxs.events.WorkspaceChanged", function(event){
-		alert("New workspace selected: " + event.data);
-	});
+	// csInterface.addEventListener("com.adobe.csxs.events.WorkspaceChanged", function(event){
+	// 	alert("New workspace selected: " + event.data);
+	// });
 
-	csInterface.addEventListener("com.adobe.ccx.start.handleLicenseBanner", function(event){
-		alert("User chose to go \'Home\', wherever that is...");
-	});
+	// csInterface.addEventListener("com.adobe.ccx.start.handleLicenseBanner", function(event){
+	// 	alert("User chose to go \'Home\', wherever that is...");
+	// });
 
-	csInterface.addEventListener("ApplicationBeforeQuit", function(event){
-		csInterface.evalScript('$._PPRO_.closeLog()');
-	});
+	// csInterface.addEventListener("ApplicationBeforeQuit", function(event){
+	// 	csInterface.evalScript('$._PPRO_.closeLog()');
+	// });
 
 	
 
