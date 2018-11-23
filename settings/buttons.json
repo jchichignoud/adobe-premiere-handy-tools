@@ -7,8 +7,10 @@
         "blurb": "Duplicate the sequence and increment the name. If the sequence doesn't end with a number, _v2 will be appended. The original sequence will be closed and moved to a subfolder '_OLD'",
         "dev": false,
         "settings": {
-            "binName": "_OLD"
-        }
+            "binName": "_OLD",
+            "lockOld": true
+        },
+        "onClick": "csInterface.evalScript('$._PPRO_.duplicateActive(button.settings)"
     },
     {
         "label": "Sequence Snapshot",
@@ -19,9 +21,19 @@
         "dev": false,
         "settings": {
             "binName": "_SNAPSHOTS",
+            "lockOld": true,
             "showUsername": true,
             "metadataColumn": "Column.PropertyText.Description"
         }
+    },
+    {
+        "label": "Navigate Snapshots",
+        "id": "snapshotnavigator",
+        "app": "PPRO",
+        "version": [13, 13],
+        "blurb": "Browse snapshots attached to the active sequence",
+        "dev": true,
+        "settings": {}
     },
     {
         "label": "Fill Frame",

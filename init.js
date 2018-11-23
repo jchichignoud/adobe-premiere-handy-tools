@@ -182,12 +182,13 @@ function loadButtons(app, version) {
 	});
 
 	$.getJSON("./settings/buttons.json", function(buttons) {
+		var csInterface = new CSInterface();
 		buttons.forEach(function(button){
 			// check if button works with app and version of app
 			if ((app == button.app) && (button.version[0] <= parseFloat(version)) && (parseFloat(version) <= button.version[1])){
 				// enable dev buttons
 				if (!button.dev || isDev){
-					var html = `<button id="btn_${button.id}" class="btn" title=${button.blurb}>${button.label}</button>`
+					var html = `<button id="btn_${button.id}" class="btn" title=${button.blurb} onClick=${button.onClick}>${button.label}</button>`
 					$( "#content" ).append(html);
 				}
 			}

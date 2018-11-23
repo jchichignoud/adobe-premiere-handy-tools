@@ -57,8 +57,11 @@ $._PPRO_={
 			newSeq.projectItem.name = $._HELPERS_.incrementName(oldSeq.name);
 			newSeq.projectItem.moveBin(sequenceLocation);
 			oldSeq.projectItem.moveBin($._PPRO_.findOrCreateSubBin(sequenceLocation, "_OLD"));
+
+			// extra functions for Premiere 2019
 			if (parseFloat(app.version) >= 13){
 				oldSeq.close();
+				$._PPRO_.lockAllSequenceTracks(oldSeq);
 			}
 			app.setSDKEventMessage(oldSeq.name + " has been duplicated and renamed to: " + newSeq.name, 'info')
 		} else {
@@ -93,10 +96,24 @@ $._PPRO_={
 			newSeq.projectItem.moveBin($._PPRO_.findOrCreateSubBin(sequenceLocation, "_SNAPSHOTS"));
 			if (parseFloat(app.version) >= 13){
 					newSeq.close();
+					$._PPRO_.lockAllSequenceTracks(newSeq);
 			}
 			app.setSDKEventMessage("Sequence " + oldSeq.name + " has been archived with the note: " + description, 'info')
 		} else {
 			app.setSDKEventMessage("No active sequence to snapshot", 'error')
+		}
+	},
+
+	snapshotNavigator : function () {
+		prompt('Recent Snapshots of "TRT_BrandEdit" \n************\n(01) Version to client (3h ago)\n(02) New track (6h ago)\n(03) Added VO (2d ago)\n************\n\n Enter digits to open Snapshot',	 '', 'Sequence Naming Prompt');
+	},
+
+	lockAllSequenceTracks : function(sequence) {
+		for ( var a=0; a < sequence.videoTracks.numTracks; a++){
+			sequence.videoTracks[a].setLocked()
+		};
+		for ( var b=0; b < sequence.audioTracks.numTracks; b++){
+			sequence.audioTracks[b].setLocked()
 		}
 	},
 
@@ -131,17 +148,23 @@ $._PPRO_={
 	},
 
 	setOfflineWhenProxied : function(startingBin){
-		for (var k = 0; k < startingBin.children.numItems; k++){
-			var currentChild = startingBin.children[k];
-			if (currentChild){
-				if (currentChild.type === ProjectItemType.BIN){
-					$._PPRO_.setOfflineWhenProxied(currentChild);		// warning; recursion!
-				} else if (currentChild.hasProxy()) {
-					currentChild.setOffline()
-					$._PPRO_.updateEventPanel("\'" + currentChild.name + "\' is now offline and using proxy media only");
+		var total = 0;
+		var checkAllForProxies = function (start) {
+			for (var k = 0; k < start.children.numItems; k++){
+				var currentChild = start.children[k];
+				if (currentChild){
+					if (currentChild.type === ProjectItemType.BIN){
+						checkAllForProxies(currentChild);		// warning; recursion!
+					} else if (currentChild.hasProxy()) {
+						currentChild.setOffline()
+						total ++;
+						$._PPRO_.updateEventPanel("\'" + currentChild.name + "\' is now offline and using proxy media only");
+					}
 				}
 			}
 		}
+		checkAllForProxies(startingBin)
+		alert(total + " items have been offlined and are now using Proxies only \nUse 'Link Media' to set them back online")
 		// telling Javascript the function is on so button can be updated
 		return true
 	},
@@ -153,7 +176,7 @@ $._PPRO_={
 				if (currentChild.type === ProjectItemType.BIN){
 					$._PPP_.setAllProjectItemsOnline(currentChild);		// warning; recursion!
 				} else if (currentChild.isOffline()){
-					currentChild.changeMediaPath(currentChild.getMediaPath(), true);
+					currentChild.changeMediaPath(currentChild.getMediaPath(), false);
                     if (currentChild.isOffline()){
                          $._PPP_.updateEventPanel("Failed to bring \'" + currentChild.name + "\' online.");
                     } else {
