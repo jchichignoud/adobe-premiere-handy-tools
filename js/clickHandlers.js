@@ -12,6 +12,12 @@ $(document).ready(function () {
         csInterface.evalScript('$._PPRO_.setOfflineWhenProxied(app.project.rootItem)', returnCallback);
     });
 
+    $("#content").on("click", "#btn_monitorimport", function (e) {
+        e.preventDefault();
+        var csInterface = new CSInterface();
+        csInterface.evalScript('$._PPRO_.registerItemAddedFxn()', toggleMonitor);
+    });
+
     $("#content").on("click", "#btn_snapshot", function (e) {
         e.preventDefault();
         var csInterface = new CSInterface();
@@ -40,6 +46,14 @@ $(document).ready(function () {
             $("#btn_proxiesonly").addClass("active");
         } else {
             $("#btn_proxiesonly").removeClass("active");
+        }
+    }
+
+    function toggleMonitor (r) {
+        if (r) {
+            $("#btn_monitorimport").addClass("active");
+        } else {
+            $("#btn_monitorimport").removeClass("active");
         }
     }
 })

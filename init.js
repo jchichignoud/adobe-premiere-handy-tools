@@ -49,13 +49,12 @@ function onLoaded() {
 	);
 	// csInterface.evalScript('$._PPRO_.getVersionInfo()', myVersionInfoFunction);	
 	// csInterface.evalScript('$._PPRO_.getActiveSequenceName()', myCallBackFunction);		
-	csInterface.evalScript('$._PPRO_.getUserName()', myUserNameFunction);  
+	csInterface.evalScript('$._PPRO_.getUserName()');  
 	// csInterface.evalScript('$._PPRO_.registerProjectPanelSelectionChangedFxn()');  	// Project panel selection changed
 	// csInterface.evalScript('$._PPRO_.registerItemAddedFxn()');					  	// Item added to project
 	// csInterface.evalScript('$._PPRO_.registerProjectChangedFxn()');					// Project changed
 	// csInterface.evalScript('$._PPRO_.registerSequenceSelectionChangedFxn()');		// Selection within the active sequence changed
-
-	csInterface.evalScript('$._PPRO_.confirmPProHostVersion()');
+	// csInterface.evalScript('$._PPRO_.confirmPProHostVersion()');
 }
 
 
@@ -188,7 +187,7 @@ function loadButtons(app, version) {
 			if ((app == button.app) && (button.version[0] <= parseFloat(version)) && (parseFloat(version) <= button.version[1])){
 				// enable dev buttons
 				if (!button.dev || isDev){
-					var html = `<button id="btn_${button.id}" class="btn" title=${button.blurb} onClick=${button.onClick}>${button.label}</button>`
+					var html = `<button id="btn_${button.id}" class="btn">${button.label}</button>`
 					$( "#content" ).append(html);
 				}
 			}

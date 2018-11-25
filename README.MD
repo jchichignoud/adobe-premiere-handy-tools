@@ -28,12 +28,12 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 - Name of the sequence should end with a number, which will be automatically incremented, otherwise " v2" will be added to the end
 - Original sequence will be placed in a sub-bin called "_OLD", which will be created if it doesn't exist
 - New sequence becomes active
-- [NEW] Old sequence is closed (Premiere 2019 only)
+- [NEW] Old sequence is locked and closed (Premiere 2019 only)
 
 ### RECENT FIXES
 - Handling "No active sequence" scenario with an alert
 - Automatically adding "_v2" to the end of sequence names that can't be incremented (when they don't end with a digit)
-- Old sequence is closed (Premiere 2019 only)
+- Old sequence is locked and closed (Premiere 2019 only)
 
 ### KNOWN ISSUES
 - No known issues
@@ -50,11 +50,10 @@ For detailed instructions, follow steps 2 and 3 on [this page](https://github.co
 - Add a comment about the snapshot (version to client, music option #1, etc..)
 - New sequence will be created, with the date and time of creation as prefix (in YYYYMMDD_HHmm format) and placed in a "_SNAPSHOTS" Subfolder (which will be created if it doesn't exist)
 - Comment will be added to the Description metadata field, [NEW] preceded by username
-- [NEW] Snapshot sequence is closed (Premiere 2019 only)
+- [NEW] Snapshot sequence is locked and closed (Premiere 2019 only)
 
 ### KNOWN ISSUES
-- On Premiere 2018, the Snapshot sequence becomes the focus. It should ideally be closed/locked, and not touched by the user.
-- Some special characters, such as apostrophes, will break the code when input in the notes dialog box. It'll trigger an error message and the duplication will fail 
+- On Premiere 2018, the Snapshot sequence becomes the focus. It should ideally be closed/locked, and not touched by the user. 
 
 --- 
 
