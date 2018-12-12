@@ -18,7 +18,6 @@ $._PPRO_={
 	rootFolder: undefined,
 
 	getSequenceID : function() {
-		alert(app.project.activeSequence.projectItem.nodeId)
 		return app.project.activeSequence.projectItem.nodeId;
 	},
 
@@ -216,7 +215,6 @@ $._PPRO_={
 
 	// takes in the active sequence or a sequence clip, returns object with width, height and ratio properties of the item
 	getSize : function(item) {
-		alert("get size");
 		var kPProPrivateProjectMetadataURI = "http://ns.adobe.com/premierePrivateProjectMetaData/1.0/";
 		if (ExternalObject.AdobeXMPScript === undefined) {
 			ExternalObject.AdobeXMPScript = new ExternalObject('lib:AdobeXMPScript');
@@ -240,7 +238,7 @@ $._PPRO_={
 		var folder = $._PPRO_.rootFolder.fsName;
 		var file = addedProjectItem.getMediaPath();
 		if (file.indexOf(folder) != 0) {
-			app.setSDKEventMessage(addedProjectItem.name + "isn't stored within your selected root folder (" + folder + ")", 'warning')
+			app.setSDKEventMessage(addedProjectItem.name + " isn't stored within your selected root folder (" + folder + ")", 'warning')
 		}
 	},
 
