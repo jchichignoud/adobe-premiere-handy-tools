@@ -20,6 +20,7 @@ if (inCEPEnvironment()) {
 
   logger.info("start", extensionPath);
 
+  //LOAD MAIN EXTENDSCRIPT FILE
   const manifest = fs.readJsonSync(path.join(extensionPath, "manifest.json"));
   loadExtendscript(manifest["index.jsx.ts"]);
 
@@ -27,8 +28,7 @@ if (inCEPEnvironment()) {
   if (host) {
     const skin = host.appSkinInfo;
     const bgColor = skin.panelBackgroundColor.color as RGBColor;
-    document.body.style.background = `rgb(${parseInt(bgColor.red)}, ${parseInt(bgColor.green)}, ${
-      parseInt(bgColor.blue)
-    })`;
+    // @ts-ignore
+    document.body.style.background = `rgb(${parseInt(bgColor.red)}, ${parseInt(bgColor.green)}, ${parseInt(bgColor.blue)})`;
   }
 }

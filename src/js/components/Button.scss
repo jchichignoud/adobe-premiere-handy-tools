@@ -1,0 +1,72 @@
+@import "../variables.scss";
+
+$button-width: 90px;
+$button-margin: 5px;
+
+button {
+  cursor: pointer;
+  box-sizing: border-box;
+  width: $button-width;
+  height: 22px;
+  background: none;
+  color: inherit;
+  border: 1px solid $standard-white;
+  border-radius: 15px;
+  margin: $button-margin;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+button:disabled {
+  border: none;
+  background-color: $brighter;
+  color: $brighter;
+  cursor: default;
+}
+
+button:disabled:hover {
+  border: none;
+  background-color: $brighter;
+  color: $brighter;
+  cursor: default;
+}
+
+button.highlight {
+  color: $active-white;
+}
+
+button:hover {
+  border: 1px solid $standard-white;
+  background-color: $standard-white;
+  color: $bg-color;
+}
+
+button.highlight:hover {
+  border: 1px solid $active-white;
+  background-color: $active-white;
+  color: $bg-color;
+}
+
+button:focus {
+  border: 1px solid $blue-highlight;
+  background-color: $blue-highlight;
+  color: $active-white;
+  outline: none;
+}
+
+button:focus:hover {
+  border: 1px solid $blue-highlight;
+  background-color: $blue-highlight;
+  color: $active-white;
+  outline: none;
+}
+
+button:active {
+  border: 1px solid $active-white;
+  background-color: $active-white;
+  color: $bg-color;
+}
+
+.wide {
+  width: ($button-width * 3 / 2) + 6px;
+}

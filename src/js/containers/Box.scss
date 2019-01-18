@@ -1,0 +1,48 @@
+@import "../variables.scss";
+
+.box {
+  box-sizing: border-box;
+  border: 1px solid $brighter;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.boxCollapsed {
+  box-sizing: border-box;
+  border: 1px solid $brighter;
+  padding: 0 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.boxTitle {
+  position: absolute;
+  top: -0.8em;
+  left: -0.5em;
+  margin-left: 10px;
+  padding-right: 7px;
+  padding-left: 20px;
+  display: inline;
+  background-color: $bg-color
+}
+
+// .boxTitleCollapsed {
+//   position: absolute;
+//   top: -0.8em;
+//   margin-left: 1em;
+//   padding: 0px 0px;
+//   display: inline;
+//   background-color: $bg-color
+// }
+
+.boxTitle > .icon {
+  padding-right: 10px;
+}
+.boxTitle > svg {
+  position: absolute;
+  left: 5px;
+  top: 2px;
+}

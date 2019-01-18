@@ -1,0 +1,26 @@
+/*
+ * Adobe Clean (c) 2009-2016 Adobe Systems Incorporated. All Rights Reserved.
+ */
+@font-face {
+font-family:"adobe-clean";
+src:url("./adobe-clean-it-400.woff") format('woff2');
+font-style:italic;font-weight:400;
+}
+
+@font-face {
+font-family:"adobe-clean";
+src:url("./adobe-clean-300.woff") format('woff2');
+font-style:normal;font-weight:300;
+}
+
+@font-face {
+font-family:"adobe-clean";
+src:url("./adobe-clean-400.woff") format('woff2');
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"adobe-clean";
+src:url("./adobe-clean-700.woff") format('woff2');
+font-style:normal;font-weight:700;
+}

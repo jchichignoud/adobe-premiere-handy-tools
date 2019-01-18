@@ -1,0 +1,35 @@
+@import "../../../variables.scss";
+
+.list {
+  background-color: $bg-color;
+  position: absolute;
+  z-index: 2;
+  border: 1px solid $brighter;
+  color: $standard-white;
+  margin-left: 10px;
+}
+
+ul {
+  background-color: $darker;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 5px 30px;
+}
+
+li:hover {
+  background-color: $brightest;
+}
+
+.selected {
+  color: $blue-highlight;
+}
+
+.tick {
+  position: absolute;
+  left: 8px;
+  color: $standard-white;
+}

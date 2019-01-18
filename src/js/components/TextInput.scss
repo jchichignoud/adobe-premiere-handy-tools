@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+.container {
+  background: $darker;
+  border: 1px solid $brighter;
+  color: $standard-white;
+  padding: 3px 10px;
+  margin-left: 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+  flex-grow: 2;
+  margin: 0px 10px;
+}
+
+input:active {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+.container:focus {
+  background: $active-white;
+  border: 1px solid $blue-highlight;
+  color: black;
+  outline: none;
+}
+
+.activated {
+  background: $active-white;
+  border: 1px solid $blue-highlight;
+  color: black;
+  outline: none;
+}
+
+.blue {
+  color: $blue-highlight;
+}

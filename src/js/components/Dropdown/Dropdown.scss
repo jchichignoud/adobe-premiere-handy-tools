@@ -1,0 +1,28 @@
+@import "../../variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: $darker;
+  border: 1px solid $brighter;
+  color: $standard-white;
+  padding: 3px 10px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.header.open {
+  background: $bg-color;
+}
+
+.header.open:hover {
+  background: $bg-color;
+}
+
+.header:hover {
+  background-color: $brighter;
+}
+
+.dropDownContainer {
+  flex-grow: 2;
+}

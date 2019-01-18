@@ -7,7 +7,7 @@ function showAlert() {
 function getInfo() {
   return JSON.stringify({
     id,
-    name: app.name,
+    name: app.getAppPrefPath,
     version: app.version
   });
 }
@@ -16,3 +16,10 @@ $.global[id] = {
   showAlert,
   getInfo
 };
+
+
+$._PPRO_ = {
+  buttonClick : function () {
+    alert("you clicked a button!")
+  },
+}
