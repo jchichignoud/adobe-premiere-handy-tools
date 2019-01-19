@@ -13,32 +13,32 @@ export default class Panel extends React.Component {
 
   render() {
     return [
-      <Box title="Buttons" collapsible>
-        <Button wide highlight>Duplicate Sequence</Button>
-        <Button wide>Sequence Snapshot</Button>
-        <Button disabled>Fill Frame</Button>
-      </Box>,
-      <Box title="Search" collapsible>
-        <TextInput />
-      </Box>,
-      <Box title="Quick Export" collapsible>
-        <Bar>
-          <Dropdown
-            options={[
-              "Match Source - High Bitrate",
-              "Youtube HD 1080p25",
-              "Apple ProRes 422HQ"
-            ]}
-          />
-          <Button>Export</Button>
-        </Bar>
-      </Box>,
-      <Box title="Clean and export" collapsible>
-        <Checkbox label="Audio tracks" />
-        <Checkbox label="Adjustment layers" />
-        <Checkbox label="Unsupported effects" />
-        <Button wide>Export XML</Button>
-      </Box>
+      <Bar>
+        <Button wide highlight trigger="duplicateActive">Duplicate Sequence</Button>
+        <Button wide trigger="snapshotSequence">Sequence Snapshot</Button>
+        <Button trigger="fillFrame">Fill Frame</Button>
+      </Bar>,
+      // <Box title="Search" collapsible>
+      //   <TextInput />
+      // </Box>,
+      // <Box title="Quick Export" collapsible>
+      //   <Bar>
+      //     <Dropdown
+      //       options={[
+      //         "Match Source - High Bitrate",
+      //         "Youtube HD 1080p25",
+      //         "Apple ProRes 422HQ"
+      //       ]}
+      //     />
+      //     <Button trigger="duplicateActive">Export</Button>
+      //   </Bar>
+      // </Box>,
+      // <Box title="Clean and export" collapsible>
+      //   <Checkbox label="Audio tracks" />
+      //   <Checkbox label="Adjustment layers" />
+      //   <Checkbox label="Unsupported effects" />
+      //   <Button trigger="duplicateActive" wide>Export XML</Button>
+      // </Box>
     ];
   }
 }

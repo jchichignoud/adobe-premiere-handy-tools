@@ -4,7 +4,7 @@ import "./Box.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface BoxProps {
-  title: string,
+  title?: string,
   collapsible?: boolean,
 }
 
