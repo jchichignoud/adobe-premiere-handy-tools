@@ -28,6 +28,7 @@ interface ButtonProps {
 }
 
 const Button: React.SFC<ButtonProps> = (props) => {
+  
   let handleClick = () => {evalExtendscript(`$._PPRO_.${props.trigger}()`)}
 
   return (

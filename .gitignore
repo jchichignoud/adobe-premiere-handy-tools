@@ -3,3 +3,5 @@ archive/
 .cache/
 dist/
 .DS_Store
+.env
+.bash_profile

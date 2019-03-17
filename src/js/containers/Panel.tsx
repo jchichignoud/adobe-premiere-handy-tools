@@ -8,6 +8,7 @@ import TextInput from "../components/TextInput";
 import Dropdown from "../components/Dropdown/Dropdown";
 import Checkbox from "../components/Checkbox";
 import AdobeAppInfo from "../components/AdobeAppInfo";
+import Notes from "../components/Notes/Notes"
 
 export default class Panel extends React.Component {
 
@@ -18,6 +19,7 @@ export default class Panel extends React.Component {
         <Button wide trigger="snapshotSequence">Sequence Snapshot</Button>
         <Button trigger="fillFrame">Fill Frame</Button>
       </Bar>,
+      <Notes />
       // <Box title="Search" collapsible>
       //   <TextInput />
       // </Box>,
