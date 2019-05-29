@@ -3,7 +3,7 @@
         "label": "Sequence New Version",
         "id": "duplicate",
         "app": "PPRO",
-        "version": [12.0, 13],
+        "version": [12.0, 14],
         "blurb": "Duplicate the sequence and increment the name. If the sequence doesn't end with a number, _v2 will be appended. The original sequence will be closed and moved to a subfolder '_OLD'",
         "dev": false,
         "settings": {
@@ -16,7 +16,7 @@
         "label": "Sequence Snapshot",
         "id": "snapshot",
         "app": "PPRO",
-        "version": [12.0, 13],
+        "version": [12.0, 14],
         "blurb": "Save a timestamped copy of the sequence with notes added to a metadata column",
         "dev": false,
         "settings": {
@@ -30,7 +30,7 @@
         "label": "Navigate Snapshots",
         "id": "snapshotnavigator",
         "app": "PPRO",
-        "version": [13, 13],
+        "version": [13, 14],
         "blurb": "Browse snapshots attached to the active sequence",
         "dev": true,
         "settings": {}
@@ -39,7 +39,7 @@
         "label": "Fill Frame",
         "id": "fill",
         "app": "PPRO",
-        "version": [12.0, 13],
+        "version": [12.0, 14],
         "blurb": "Set size of selected clips to fill the frame with minimum crop",
         "dev": false
     },
@@ -47,7 +47,7 @@
         "label": "Proxies Only",
         "id": "proxiesonly",
         "app": "PPRO",
-        "version": [13, 13],
+        "version": [13, 14],
         "blurb": "Make hi-res media offline for clips that have proxies attached. Once on, click again to re-online",
         "dev": false
     },
@@ -55,7 +55,7 @@
         "label": "Import Monitoring",
         "id": "monitorimport",
         "app": "PPRO",
-        "version": [13, 13],
+        "version": [13, 14],
         "blurb": "Check that every file imported is within a defined location",
         "dev": true,
         "settings": {}
